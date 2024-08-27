@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#1ab394">
+
+		<title>Platform Engineering Evaluatio... - Evaluation Plans - KubeCon + CloudNativeCon India 2024 @ Sessionize.com</title>
+
+		<link href="/bundles/App_Css/10900014515" rel="stylesheet" />
+
+
+
+		<script src="/Scripts/modernizr-2.8.3.js"></script>
+
+
+		<script type="text/javascript">
+
+function consoleLog(...parameters) {
+
+
+}
+
+
+		</script>
+
+		<link rel="icon" type="image/svg+xml" href="/favicon">
+		<link rel="alternate icon" href="/landing/images/favicon/favicon.png">
+		<link rel="mask-icon" href="/landing/images/favicon/favicon-safari.svg" color="#1AB394">
+		<link rel="apple-touch-icon" href="/landing/images/favicon/apple-touch-icon.png">
+		<link rel="manifest" href="/landing/manifest.webmanifest">
+
+
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9RSMQ9D5LK"></script>
+		<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments);  }
+gtag('js', new Date());
+
+gtag('config', 'G-9RSMQ9D5LK');
+		</script>
+
+		<script type="text/javascript">
+!function (T, l, y) { var S = T.location, k = "script", D = "connectionString", C = "ingestionendpoint", I = "disableExceptionTracking", E = "ai.device.", b = "toLowerCase", w = "crossOrigin", N = "POST", e = "appInsightsSDK", t = y.name || "appInsights"; (y.name || T[e]) && (T[e] = t); var n = T[t] || function (d) { var g = !1, f = !1, m = { initialize: !0, queue: [], sv: "5", version: 2, config: d  }; function v(e, t) { var n = {}, a = "Browser"; return n[E + "id"] = a[b](), n[E + "type"] = a, n["ai.operation.name"] = S && S.pathname || "_unknown_", n["ai.internal.sdkVersion"] = "javascript:snippet_" + (m.sv || m.version), { time: function () { var e = new Date; function t(e) { var t = "" + e; return 1 === t.length && (t = "0" + t), t  } return e.getUTCFullYear() + "-" + t(1 + e.getUTCMonth()) + "-" + t(e.getUTCDate()) + "T" + t(e.getUTCHours()) + ":" + t(e.getUTCMinutes()) + ":" + t(e.getUTCSeconds()) + "." + ((e.getUTCMilliseconds() / 1e3).toFixed(3) + "").slice(2, 5) + "Z"  }(), name: "Microsoft.ApplicationInsights." + e.replace(/-/g, "") + "." + t, sampleRate: 100, tags: n, data: { baseData: { ver: 2  }  }  }  } var h = d.url || y.src; if (h) { function a(e) { var t, n, a, i, r, o, s, c, u, p, l; g = !0, m.queue = [], f || (f = !0, t = h, s = function () { var e = {}, t = d.connectionString; if (t) for (var n = t.split(";"), a = 0; a < n.length; a++) { var i = n[a].split("="); 2 === i.length && (e[i[0][b]()] = i[1])  } if (!e[C]) { var r = e.endpointsuffix, o = r ? e.location : null; e[C] = "https://" + (o ? o + "." : "") + "dc." + (r || "services.visualstudio.com")  } return e  }(), c = s[D] || d[D] || "", u = s[C], p = u ? u + "/v2/track" : d.endpointUrl, (l = []).push((n = "SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)", a = t, i = p, (o = (r = v(c, "Exception")).data).baseType = "ExceptionData", o.baseData.exceptions = [{ typeName: "SDKLoadFailed", message: n.replace(/\./g, "-"), hasFullStack: !1, stack: n + "\nSnippet failed to load [" + a + "] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: " + (S && S.pathname || "_unknown_") + "\nEndpoint: " + i, parsedStack: []  }], r)), l.push(function (e, t, n, a) { var i = v(c, "Message"), r = i.data; r.baseType = "MessageData"; var o = r.baseData; return o.message = 'AI (Internal): 99 message:"' + ("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) (" + n + ")").replace(/\"/g, "") + '"', o.properties = { endpoint: a  }, i  }(0, 0, t, p)), function (e, t) { if (JSON) { var n = T.fetch; if (n && !y.useXhr) n(t, { method: N, body: JSON.stringify(e), mode: "cors"  }); else if (XMLHttpRequest) { var a = new XMLHttpRequest; a.open(N, t), a.setRequestHeader("Content-type", "application/json"), a.send(JSON.stringify(e))  }  }  }(l, p))  } function i(e, t) { f || setTimeout(function () { !t && m.core || a()  }, 500)  } var e = function () { var n = l.createElement(k); n.src = h; var e = y[w]; return !e && "" !== e || "undefined" == n[w] || (n[w] = e), n.onload = i, n.onerror = a, n.onreadystatechange = function (e, t) { "loaded" !== n.readyState && "complete" !== n.readyState || i(0, t)  }, n  }(); y.ld < 0 ? l.getElementsByTagName("head")[0].appendChild(e) : setTimeout(function () { l.getElementsByTagName(k)[0].parentNode.appendChild(e)  }, y.ld || 0)  } try { m.cookie = l.cookie  } catch (p) { } function t(e) { for (; e.length;)!function (t) { m[t] = function () { var e = arguments; g || m.queue.push(function () { m[t].apply(m, e)  })  }  }(e.pop())  } var n = "track", r = "TrackPage", o = "TrackEvent"; t([n + "Event", n + "PageView", n + "Exception", n + "Trace", n + "DependencyData", n + "Metric", n + "PageViewPerformance", "start" + r, "stop" + r, "start" + o, "stop" + o, "addTelemetryInitializer", "setAuthenticatedUserContext", "clearAuthenticatedUserContext", "flush"]), m.SeverityLevel = { Verbose: 0, Information: 1, Warning: 2, Error: 3, Critical: 4  }; var s = (d.extensionConfig || {}).ApplicationInsightsAnalytics || {}; if (!0 !== d[I] && !0 !== s[I]) { var c = "onerror"; t(["_" + c]); var u = T[c]; T[c] = function (e, t, n, a, i) { var r = u && u(e, t, n, a, i); return !0 !== r && m["_" + c]({ message: e, url: t, lineNumber: n, columnNumber: a, error: i  }), r  }, d.autoExceptionInstrumented = !0  } return m  }(y.cfg); function a() { y.onInit && y.onInit(n)  } (T[t] = n).queue && 0 === n.queue.length ? (n.queue.push(a), n.trackPageView({})) : a()  }(window, document, {
+	src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+	// name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+	// ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+	// useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+	crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+	// onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+	cfg: { // Application Insights Configuration
+		connectionString: "InstrumentationKey=ba35a242-e5fe-43ee-8c84-4a7a79591411;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/"
+			/* ...Other Configuration Options... */
+	}
+
+});
+		</script>
+
+
+
+		<!-- nhj -->
+
+
+
+
+
+	</head>
+	<body class="fixed-sidebar">
+
+		<div id="wrapper">
+
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav m-b-xl" id="side-menu">
+						<li class="nav-label">
+							<div class="p-sm text-center">
+								<a class="sz-logo" href="/">
+									<img src="/AssetsAdmin/logo-invert.svg"  alt="">
+								</a>
+							</div>
+						</li>
+						<li class="nav-header area-selector">
+							<div class="p-sm">
+								<div class="btn-group btn-group-justified btn-group-sm" role="group">
+									<a href="/app/organizer" class="btn btn-primary"><i class="fal fa-bullhorn"></i> <span class="nav-label">Organizer</span></a>
+									<a href="/app/speaker" class="btn btn-primary btn-outline"><i class="fal fa-microphone"></i> <span class="nav-label">Speaker</span></a>
+								</div>
+
+								<div class="btn-non-group">
+									<a href="/app/organizer" class="btn btn-block btn-sm btn-primary m-t-xs"><i class="fal fa-bullhorn"></i> <span class="nav-label">Organizer</span></a>
+									<a href="/app/speaker" class="btn btn-block btn-sm btn-primary m-t-xs btn-outline"><i class="fal fa-microphone"></i> <span class="nav-label">Speaker</span></a>
+								</div>
+
+							</div>
+						</li>
+
+
+
+
+						<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+		function(event) {
+			setSearchEverything('/app/organizer/sessions/dd/16147',
+					'/app/organizer/sessions/r/16147');
+
+		});
+						</script>
+						<li class="event-title-row">
+							<div class="dropdown profile-element">
+								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+									<span class="clear">
+										<span class="block m-t-xs">
+											<span class="event-title">KubeCon + CloudNativeCon India 2024</span>
+											<span class="event-meta text-muted block text-right">
+												change event
+												<b class="caret"></b>
+											</span>
+										</span>
+									</span>
+								</a>
+
+								<ul class="dropdown-menu m-t-xs">
+									<li>
+										<a href="/app/organizer/event/14577">KubeCon + CloudNativeCon + Open Source Summit + AI_Dev China 2024</a>
+									</li>
+									<li class="divider"></li>
+									<li><a href="/app/organizer">Older events</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="active">
+							<a href="/app/organizer/event/evaluation/16147">
+								<i class="fal fa-gavel fa-fw"></i>
+								<span class="nav-label">Evaluation</span>
+							</a>
+						</li>
+						<li class="nav-divider"></li>
+
+
+
+						<li class="  ">
+							<a href="#">
+								<i class="fal fa-fw fa-bullhorn"></i>
+								<span class="nav-label">Events</span>
+								<span class="arrow">
+									<i class="fal arrow-down fa-angle-down"></i>
+									<i class="fal arrow-left fa-angle-left"></i>
+								</span>
+							</a>
+							<ul class="nav nav-second-level collapse">
+								<li class=""><a href="/app/organizer/events">My events</a></li>
+								<li class=""><a href="/app/organizer/event/create"><span class="fal fa-plus-square"></span> New event</a></li>
+								<li class=""><a href="/app/organizer/event/create-ug"><span class="fal fa-plus-square"></span> New user group</a></li>
+							</ul>
+						</li>
+
+						<li class="   ">
+							<a href="#">
+								<i class="fal fa-fw fa-list-alt"></i>
+								<span class="nav-label">Lists</span>
+								<span class="arrow">
+									<i class="fal arrow-down fa-angle-down"></i>
+									<i class="fal arrow-left fa-angle-left"></i>
+								</span>
+							</a>
+							<ul class="nav nav-second-level collapse">
+								<li class=""><a href="/app/lists">My lists</a></li>
+								<li class=""><a href="/app/lists/new/events"><span class="fal fa-plus-square"></span> New event list</a></li>
+								<li class=""><a href="/app/lists/new/speakers"><span class="fal fa-plus-square"></span> New speaker list</a></li>
+								<li class=""><a href="/app/lists/listed/Events">My listed events</a></li>
+							</ul>
+						</li>
+
+
+						<li>
+							<a href="/speakers-directory" target="_blank">
+								<i class="fal fa-fw fa-folder-open"></i>
+								<span class="nav-label">Speakers Directory</span>
+								<span class="arrow" style="margin-top: -2px;">
+									<i class="fal arrow-left fa-xs fa-external-link"></i>
+								</span>
+
+							</a>
+						</li>
+
+
+
+
+					</ul>
+
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="row border-bottom">
+					<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+						<div class="navbar-header">
+							<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
+								<i class="fal fa-bars"></i>
+							</a>
+
+
+						</div>
+						<ul class="nav navbar-top-links navbar-right">
+
+							<li class="p-t-sm p-l-sm">
+								<button data-toggle="dropdown" type="button" class="btn btn-sm btn-success btn-outline dropdown-toggle">
+									<i class="fal fa-fw fa-question"></i>
+									Help &amp; Support
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" style="right: auto;" id="js-playbook-articles">
+									<li><a href="/playbook/" target="_blank"><b><i class="fal fa-fw fa-book-open"></i>&nbsp; Sessionize Playbook</b></a></li>
+									<li><a href="#" onclick="contactSupport(); return false;" class="font-bold"><b><i class="fal fa-fw fa-envelope"></i>&nbsp; Contact Support</b></a></li>
+
+								</ul>
+							</li>
+							<li class="p-t-sm p-l-sm p-b-sm">
+								<div class="btn-group">
+									<button data-toggle="dropdown" class="btn btn-default btn-outline btn-sm dropdown-toggle" aria-expanded="false">
+										<span>
+											<img alt="" class="img-circle" src="https://sessionize.com/image/3aac-48o48o2-45XNwfanMLUvwyLn2jy1pV.png">
+										</span>
+										Peter Pan
+										<span class="hide-on-mobile hide-on-tablet">(peter.pan@daocloud.io)</span>
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="/app/speaker/profile">My profile</a></li>
+										<li><a href="/app/logins">Manage logins</a></li>
+										<li><a href="/app/migrate-account">Migrate to another account</a></li>
+										<li><a href="/app/email/change">Change email address</a></li>
+										<li><a href="/app/logins">Change password</a></li>
+										<li class="divider"></li>
+										<li><a href="#" onclick="return logOff();"><i class="fal fa-sign-out"></i> Logout</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+
+					</nav>
+				</div>
+
+
+
+
+
+
+
+
+				<div class="row wrapper white-bg page-heading no-bottom-padding animated fadeInRight">
+					<div class="col-lg-8">
+						<h2>
+							KubeCon + CloudNativeCon India 2024
+
+
+
+							<span class="badge badge-success">in 106 days</span>
+
+
+							<span class="badge badge-primary">activated</span>
+						</h2>
+
+
+
+						<ol class="breadcrumb m-b-sm">
+							<li class="breadcrumb-item">
+								<a href="/app/organizer/event/evaluation/16147">Evaluation Plans</a>
+							</li>
+							<li class="breadcrumb-item active">
+								<strong>Platform Engineering Evaluatio...</strong>
+							</li>
+						</ol>
+
+
+					</div>
+					<div class="col-lg-4">
+						<div class="pull-right p-sm">
+							<a href="/kubecon-cloudnativecon-india-2024/" class="btn btn-success btn-outline" target="_blank"><i class="fal fa-external-link-square"></i> CfS page</a>
+							<a href="/app/organizer/events" class="btn btn-primary btn-outline"><i class="fal fa-list"></i> All events</a>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+
+				<div class="wrapper wrapper-content">
+
+
+
+
+
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="ibox">
+								<div class="ibox-title">
+									<div class="pull-right">
+										<a href="/app/organizer/event/evaluation/16147" class="btn btn-default btn-outline"><i class="fal fa-pause"></i> Stop and continue later</a>
+										<a href="/app/organizer/event/evaluation/stats/16147/5092/aa1d25a7-7dfe-4fa4-ae67-59c835e5dbae" class="btn btn-success"><i class="fal fa-chart-bar"></i> My Statistics</a>
+									</div>
+									<h2>
+										<span class="m-r-md" style="display: inline-block;">
+											Platform Engineering Evaluation
+										</span>
+
+										<a class="playbook" data-id="1473778" style="vertical-align: 2px;">Evaluator's guide</a>
+									</h2>
+								</div>
+								<div class="ibox-content">
+									<div class="progress m-b-none">
+										<div style="width: 66.2983425414365%;" class="progress-bar progress-bar-striped progress-bar-success">
+											<div class="text-right m-r-xs">
+												66.3%
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="ibox collapsed" style="margin-top: -25px;">
+								<div class="ibox-title">
+									<h5 class="text-muted collapse-header"><i class="fal fa-info-circle"></i> Organizer's instructions</h5>
+									<div class="ibox-tools">
+										<a class="collapse-link">
+											<i class="fal fa-chevron-up"></i>
+										</a>
+									</div>
+								</div>
+								<div class="ibox-content ibox-content-no-top-border">
+									<p class="m-b-none"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-india/program/submission-reviewer-guidelines/#star-ratings-evaluation-mode"  target="_blank">https://events.linuxfoundation.org/kubecon-cloudnativecon-india/program/submission-reviewer-guidelines/#star-ratings-evaluation-mode</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-lg-8">
+							<div class="ibox">
+								<div class="ibox-title">
+									<h3>
+										This is Title
+									</h3>
+								</div>
+								<div class="ibox-content">
+
+									<div class="rating-grid">
+										<div>
+
+
+											<div class="evaluation-session">
+
+												<p class="es-description m-b-md force-wrap" v-pre>
+												An effective DevOps 
+
+												</p>
+
+												<div class="es-categories table-nomaxwidth m-b-md label-ellipsis">
+
+
+
+													<table class="table table-condensed border-bottom">
+
+														<tr>
+															<th >
+																<small>
+																	Track
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																<span class="label label-default">Platform Engineering</span>
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Session format
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																<span class="label label-default">Session Presentation (35 minutes - 1-2 speakers)</span>
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Level
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																<span class="label label-default">Intermediate</span>
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Benefits to the ecosystem
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																This talk benefits the community by addressing
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Case study?
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																<span class="label label-default">No</span>
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Presented this talk before?
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																<span class="label label-default">No</span>
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	CNCF-hosted&#160;software
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																ArgoCD 
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Open source projects
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																Tekton,
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Additional resources
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																Our talk  slides
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Code of conduct
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																<i class="fa fa-check-circle fa-lg text-success"></i>
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Commitment to inclusivity
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																<i class="fa fa-check-circle fa-lg text-success"></i>
+
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<th >
+																<small>
+																	Are you both the submitter and speaker?
+																</small>
+															</th>
+															<td >
+																<p class="m-b-none force-wrap">
+																<span class="label label-default">Yes</span>
+
+																</p>
+															</td>
+														</tr>
+													</table>
+
+
+												</div>
+
+												<div class="es-speakers m-b-md">
+													<div class="social-feed-box" style="overflow: auto;">
+														<div class="social-body">
+															<div class="pull-right">
+																<img alt="" style="height: 96px;" class="img-circle m-t-xs img-responsive" src="https://sessionize.com/image/a07c-96o96o2-BRxhK5HFspYcCMz3Vw3RHu.jpeg">
+															</div>
+															<h4><strong>Peter</strong></h4>
+															<p class="text-muted" v-pre>Haha</p>
+															<p class="force-wrap" v-pre>
+															Intro
+															</p>
+
+															<div class="table-nomaxwidth">
+
+
+
+																<table class="table table-condensed border-bottom">
+
+																	<tr>
+																		<th >
+																			<small>
+																				Speaker Title
+																			</small>
+																		</th>
+																		<td >
+																			<p class="m-b-none force-wrap">
+																			Software Engineer &amp; Developer
+
+																			</p>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th >
+																			<small>
+																				Company
+																			</small>
+																		</th>
+																		<td >
+																			<p class="m-b-none force-wrap">
+																			DaoCloud	
+
+																			</p>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th >
+																			<small>
+																				Is this an end user company?
+																			</small>
+																		</th>
+																		<td >
+																			<p class="m-b-none force-wrap">
+																			<span class="label label-default">No</span>
+
+																			</p>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th >
+																			<small>
+																				Spoken Previously at KubeCon + CloudNativeCon?
+																			</small>
+																		</th>
+																		<td >
+																			<p class="m-b-none force-wrap">
+																			<span class="label label-default">No</span>
+
+																			</p>
+																		</td>
+																	</tr>
+																</table>
+
+
+															</div>
+
+														</div>
+													</div>
+													<div class="social-feed-box" style="overflow: auto;">
+														<div class="social-body">
+															<div class="pull-right">
+																<img alt="" style="height: 96px;" class="img-circle m-t-xs img-responsive" src="https://sessionize.com/image/5fbf-96o96o2-YYMdzEmoNtji9ApsGG26SZ.jpg">
+															</div>
+															<h4><strong>Joe</strong></h4>
+															<p class="text-muted" v-pre>Software Engineer </p>
+															<p class="force-wrap" v-pre>
+															Intro
+															</p>
+
+															<div class="table-nomaxwidth">
+
+
+
+																<table class="table table-condensed border-bottom">
+
+																	<tr>
+																		<th >
+																			<small>
+																				Speaker Title
+																			</small>
+																		</th>
+																		<td >
+																			<p class="m-b-none force-wrap">
+																			Software Engineer
+
+																			</p>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th >
+																			<small>
+																				Company
+																			</small>
+																		</th>
+																		<td >
+																			<p class="m-b-none force-wrap">
+																			Name of Company	
+
+																			</p>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th >
+																			<small>
+																				Is this an end user company?
+																			</small>
+																		</th>
+																		<td >
+																			<p class="m-b-none force-wrap">
+																			<span class="label label-default">No</span>
+
+																			</p>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th >
+																			<small>
+																				Spoken Previously at KubeCon + CloudNativeCon?
+																			</small>
+																		</th>
+																		<td >
+																			<p class="m-b-none force-wrap">
+																			<span class="label label-default">No</span>
+
+																			</p>
+																		</td>
+																	</tr>
+																</table>
+
+
+															</div>
+
+														</div>
+													</div>
+												</div>
+
+
+											</div>
+
+										</div>
+										<div>
+											<div class="rating-box">
+												<form action="/app/organizer/event/evaluation/rate/16147/5092/one" class="form-horizontal" data-formex="true" id="theForm" method="post" onsubmit="return formexSubmit(this);"><input name="__RequestVerificationToken" type="hidden" value="Zz3JdWrv0FeVgaQaZTQziXYaFR1_YayWbYV3vIPdxoHWktdjF2S-MNyOGSVareRQuPH3f8papoSR5Qkvp5rdF9CqHPEDNwE3olgyY3Q9bPTdGOt3XR1Oze26TMjBtqIBpUKB8h3A0XncnZBI1eLC9Q2" /><input id="formex-submit-button-value" name="formex-submit-button-value" type="hidden" value="" /><input id="formex-confirmation-value" name="formex-confirmation-value" type="hidden" value="" /><input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Session_Id" name="Session.Id" type="hidden" value="740240" /><input id="Signature" name="Signature" type="hidden" value="dgagmeb-bij-iwcaqm-sef-qzaj-mweyx-jabveq-zya" /><input data-val="true" data-val-number="The field SecondsOnPage must be a number." data-val-required="The SecondsOnPage field is required." id="SecondsOnPage" name="SecondsOnPage" type="hidden" value="0" />                                    <dl>
+														<dt>
+														Content
+														<small class="font-normal block"></small>
+														</dt>
+														<dd>
+														<span class="rating" data-rateyo-rating="3" data-rateyo-star-width="32px" data-rateyo-rated-fill="#1BB394"></span>
+
+														<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Criteria_0__Id" name="Criteria[0].Id" type="hidden" value="6019" />
+														<input class="rating-value" data-val="true" data-val-number="The field Rating must be a number." id="Criteria_0__Rating" name="Criteria[0].Rating" type="hidden" value="3" />
+														</dd>
+														<dt>
+														Originality
+														<small class="font-normal block"></small>
+														</dt>
+														<dd>
+														<span class="rating" data-rateyo-rating="3.5" data-rateyo-star-width="32px" data-rateyo-rated-fill="#1BB394"></span>
+
+														<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Criteria_1__Id" name="Criteria[1].Id" type="hidden" value="6020" />
+														<input class="rating-value" data-val="true" data-val-number="The field Rating must be a number." id="Criteria_1__Rating" name="Criteria[1].Rating" type="hidden" value="3.5" />
+														</dd>
+														<dt>
+														Relevance
+														<small class="font-normal block"></small>
+														</dt>
+														<dd>
+														<span class="rating" data-rateyo-rating="3" data-rateyo-star-width="32px" data-rateyo-rated-fill="#1BB394"></span>
+
+														<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Criteria_2__Id" name="Criteria[2].Id" type="hidden" value="6021" />
+														<input class="rating-value" data-val="true" data-val-number="The field Rating must be a number." id="Criteria_2__Rating" name="Criteria[2].Rating" type="hidden" value="3" />
+														</dd>
+														<dt>
+														Speaker(s)
+														<small class="font-normal block"></small>
+														</dt>
+														<dd>
+														<span class="rating" data-rateyo-rating="3" data-rateyo-star-width="32px" data-rateyo-rated-fill="#1BB394"></span>
+
+														<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Criteria_3__Id" name="Criteria[3].Id" type="hidden" value="6022" />
+														<input class="rating-value" data-val="true" data-val-number="The field Rating must be a number." id="Criteria_3__Rating" name="Criteria[3].Rating" type="hidden" value="3" />
+														</dd>
+													</dl>
+													<p class="font-bold">Your comments</p>
+													<div class="m-b-md">
+														<div class="m-b-sm">
+															<span class="label label-default pull-right m-l-sm">26 Aug 2024</span>
+															<div class="small">
+																sigstore/cosign
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group form-group-vertical m-b-sm">
+														<textarea class="form-control autoheight " cols="20" data-min-height="30px" id="RatingComment" name="RatingComment" placeholder="Add new comment here (optional)" rows="2">
+														</textarea>
+														<span class="field-validation-valid" data-valmsg-for="RatingComment" data-valmsg-replace="true"></span>
+														<input data-val="true" data-val-required="The RatingCommentRequired field is required." id="RatingCommentRequired" name="RatingCommentRequired" type="hidden" value="False" />
+														<input id="RatingCommentSignature" name="RatingCommentSignature" type="hidden" value="qox-kjar-kqep-nzardew-sk-inutnaoc-owb-sem" />
+													</div>
+
+													<hr />
+													<div class="btn-group btn-block">
+														<button class="btn btn-primary disabled rating-button js-save-button" disabled="true" type="button" data-form-action="save"><i class="fa fa-save"></i> Save and continue</button>
+
+														<div class="btn-group">
+															<button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-chevron-down"></i></button>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li>
+																	<a class="dropdown-item" href="#" data-form-action="ask-later"><i class="fa fa-fw fa-step-forward"></i> Skip and ask later</a>
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#" data-form-action="ignore"><span data-e2icons="i"></span> Ignore this session</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+						<div class="col-lg-4">
+							<div class="tabs-container">
+								<ul id="tabboxes" class="nav nav-tabs nav-tabs-compact" role="tablist">
+									<li class="active"><a class="nav-link" data-toggle="tab" data-view="Todo" href="#tab1"><i class="fal fa-list-ul"></i> <span>To do</span></a></li>
+									<li><a class="nav-link" data-toggle="tab" data-view="Recent" href="#tab2"><i class="fal fa-history"></i> <span>Recent</span></a></li>
+									<li><a class="nav-link" data-toggle="tab" data-view="Speaker" href="#tab3"><i class="fal fa-user"></i> <span>Speaker</span></a></li>
+									<li><a class="nav-link" data-toggle="tab" data-view="Similar" href="#tab4"><i class="fal fa-equals"></i> <span>Similar</span></a></li>
+									<li><a class="nav-link" data-toggle="tab" data-view="Search" href="#tab5"><i class="fal fa-search"></i> <span>Search</span></a></li>
+								</ul>
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane active">
+										<div class="panel-body">
+
+											<div id="vue-holder" v-cloak v-bind:class="{ 'loading' : !loaded  }">
+
+												<p>
+												<input type="text" v-if="data && data.view == 'Search'" class="form-control" v-model="query" placeholder="(search sessions)" />
+												</p>
+
+												<div v-if="data && data.message == 'NoRecent'" class="alert alert-warning">
+													<p>No recent ratings.</p>
+												</div>
+												<div v-if="data && data.message == 'NoTodo'" class="alert alert-success">
+													<p>No more pending sessions.</p>
+												</div>
+												<div v-if="data && data.message == 'NoSearch'" class="alert alert-warning">
+													<p>No matching sessions.</p>
+												</div>
+												<div v-if="data && data.message == 'NoSimilar'" class="alert alert-warning">
+													<p>No similar sessions.</p>
+												</div>
+												<div v-if="data && data.message == 'NoSpeaker'" class="alert alert-warning">
+													<p>No sessions from the same speaker.</p>
+												</div>
+
+												<table class="table table-condensed table-striped m-b-sm" v-if="data && data.sessions">
+													<tbody>
+														<tr v-for="session in data.sessions" :key="session.sessionId">
+															<td>
+																<a :href="'/app/organizer/event/evaluation/rate/16147/5092?sessionId=' + session.sessionId" :class="{ 'text-disabled' : session.ignored  }">{{session.title}}</a>
+															</td>
+															<td v-for="(rating, index) in session.ratings" :key="session.sessionId + '.' + index">
+																<e2rating :rating="rating" type="Stars"></e2rating>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+
+												<div class="m-t-md">
+													<template v-if="data">
+														<div v-if="data.previousPage || data.nextPage" class="text-center">
+															<div class="btn-group">
+																<a :class="{ 'disabled': !data.previousPage  }" v-on:click.stop="gotoPage(0)" class="btn btn-white"><i class="fa fa-angle-double-left"></i></a>
+																<a :class="{ 'disabled': !data.previousPage  }" v-on:click.stop="gotoPage(data.page - 1)" class="btn btn-white"><i class="fa fa-angle-left"></i></a>
+																<a v-for="page in data.pages" v-on:click.stop="gotoPage(page);" class="btn btn-white" :class="{'active' : page === data.page}">{{page + 1}}</a>
+																<a :class="{ 'disabled': !data.nextPage  }" v-on:click.stop="gotoPage(data.page + 1)" class="btn btn-white"><i class="fa fa-angle-right"></i></a>
+																<a :class="{ 'disabled': !data.nextPage  }" v-on:click.stop="gotoPage(data.totalPages)" class="btn btn-white"><i class="fa fa-angle-double-right"></i></a>
+															</div>
+														</div>
+													</template>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+
+						</div>
+					</div>
+
+
+
+				</div>
+
+
+
+			</div>
+		</div>
+
+		<div class="modal inmodal" data-html2canvas-ignore id="supportModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content animated bounceInRight">
+					<form id="supportForm" action="/app/support/submit" method="post" class="form-horizontal">
+						<input name="__RequestVerificationToken" type="hidden" value="vXKtIlmbK0wtJHYGhXRxP8rNmLbsPre_v53gOH609Pj8Tz-7-_akSnZtcEObAag4f9NNn8KJ5eAPR0XXN6qUoPpM-RqaipejaUNViSyLAjvvD3kfVA5WAtcqnxBF7qTmsF9hKW48LtZzWD7fJBYAJw2" />
+
+						<input type="hidden" name="uri" value="https://sessionize.com/app/organizer/event/evaluation/rate/16147/5092?sessionId=740240" />
+						<input type="hidden" name="title" value="Platform Engineering Evaluatio... - Evaluation Plans - KubeCon + CloudNativeCon India 2024" />
+						<input type="hidden" name="screenshot" value="" />
+						<input type="hidden" name="eventSig" value="" />
+
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title">Contact</h4>
+
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label>From</label> <input type="text" value="Peter Pan <peter.pan@daocloud.io>" class="form-control" readonly="readonly" disabled="disabled">
+							</div>
+							<div class="form-group">
+								<label>To</label>
+
+								<select class="form-control" name="eventId" id="contact-to">
+									<option value="">(please select recipient)</option>
+									<option value="to_be_replaced" data-extra="(contact event organizer about your submission)"></option>
+									<option value="null">Sessionize Support (questions or issues regarding Sessionize itself)</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Subject</label> <input type="text" name="subject" value="Platform Engineering Evaluatio... - Evaluation Plans - KubeCon + CloudNativeCon India 2024" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Message</label> <textarea name="message" class="form-control" style="min-height: 100px;"></textarea>
+							</div>
+							<div class="form-group" id="js-screenshot-group">
+								<div class="col-sm-6">
+									<div class="i-checks i-checks-indent">
+										<label>
+											<input id="includeScreenshot" name="includeScreenshot" type="checkbox" value="true" /><input name="includeScreenshot" type="hidden" value="false" />
+											<i>
+												<span class="label label-info pull-right">BETA</span>
+												Include a screenshot of the current page if relevant, so we can help you better
+											</i>
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div style="height: 100px; overflow: hidden;">
+										<img id="supportScreenshot" style="width: 100%;" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary">Send</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+var dismissEmailLink = '/app/email/dismiss';
+		</script>
+
+
+
+
+		<script type="text/javascript">
+var sessionStatuses = {};
+
+sessionStatuses['i0'] = 'Accepted';
+
+
+sessionStatuses['i5'] = 'Accept Queue';
+
+
+sessionStatuses['i10'] = 'Nominated';
+
+
+sessionStatuses['i15'] = 'Decline Queue';
+
+
+sessionStatuses['i20'] = 'Declined';
+
+function getSessionStatusText(s) {
+	return sessionStatuses['i' + s];
+
+}
+
+var szTimeFormat = 'h:mm a';
+var szDateFormat = 'DD MMM YYYY';
+var szDateTimeFormat = 'DD MMM YYYY h:mm a';
+var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+var imageFormats = '.jpg,.jpeg,.jfif,.png,.gif,.svg,.webp';
+		</script>
+
+
+		<script src="/bundles/App_Js/10900014515"></script>
+
+
+
+		<script type="text/javascript">
+toastr.options = {
+	"closeButton": true,
+	"progressBar": true,
+	"positionClass": "toast-almost-top-right",
+
+}
+		</script>
+
+		<script type="text/javascript">
+$('body')
+.tooltip({
+	selector: "[data-toggle=tooltip]",
+	container: "body",
+
+});
+		</script>
+
+		<script type="text/javascript">
+$('input.daterange')
+.daterangepicker({
+	locale: {
+		format: 'DD MMM YYYY',
+
+	},
+
+
+});
+$('input.datetimerange')
+.daterangepicker({
+	timePicker: true,
+	timePickerIncrement: 1,
+	//timePicker24Hour: true,
+	locale: {
+		format: 'DD MMM YYYY h:mm a',
+
+	},
+
+
+});
+
+$('input.datepicker').each(function () {
+	var dp = $(this);
+	var value = $(this).val();
+	var required = dp.attr('required');
+	dp.daterangepicker({
+		singleDatePicker: true,
+		locale: {
+			format: 'DD MMM YYYY',
+			cancelLabel: required ? 'Cancel' : 'Clear',
+
+		},
+
+
+	});
+	if (!required) {
+		dp.on('cancel.daterangepicker', function (ev, picker) {
+			//do something, like clearing an input
+			dp.val('');
+
+		});
+
+	}
+	if (value === '') dp.val('');
+
+});
+
+$('input.datetimepicker').each(function () {
+	var dp = $(this);
+	var value = dp.val();
+	var required = dp.attr('required');
+	dp.daterangepicker({
+		timePicker: true,
+		timePickerIncrement: 1,
+		singleDatePicker: true,
+		locale: {
+			format: 'DD MMM YYYY h:mm a',
+			cancelLabel: required ? 'Cancel' : 'Clear',
+
+		},
+
+	});
+	if (!required) {
+		dp.on('cancel.daterangepicker', function (ev, picker) {
+			//do something, like clearing an input
+			dp.val('');
+
+		});
+
+	}
+	if (value === '') dp.val('');
+
+});
+
+
+		</script>
+
+
+		<div class="hidden">
+			<form action="/logoff" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="5AUYEAh1mh-FTh6uAuPbwzAVVCYndSNB1fJKIi5JH2i6Zv2GyIB_V43euhR-JSZGXGS8hHJHHts4Vj3yyvZ-fwREahiYqUnHQ6xk_5_a31eZjdA_3iVHM_MH_zpHHOJnMfxEyqVdvss06--6Fqq7dQ2" />            <input type="hidden" name="returnUrl" />
+			</form>        <script type="text/javascript">
+function logOff(returnUrl) {
+	if (returnUrl) $('#logoutForm input').val(returnUrl);
+	$('#logoutForm').submit();
+	return false;
+
+}
+		</script>
+		</div>
+
+		<script type="text/javascript">
+function mailView(id) {
+	openInModalCode('Mail Preview', '/app/mail/' + id);
+
+	return false;
+
+}
+		</script>
+
+		<script type="text/javascript">
+$('*[data-flag]').each(function () {
+	var $this = $(this);
+	$this
+		.addClass('pmholder')
+		.prepend('<span class="pmhint">' + $(this).data('flag').toUpperCase() + '</span>')
+		$pmhint = $this.find('.pmhint');
+	$pmhint.css('margin-top', 'calc(-1 * ' + $this.css('padding-top') + ' - 10px)');
+	$pmhint.css('margin-left', 'calc(-1 * ' + $this.css('padding-left') + ' - 10px)');
+
+});
+		</script>
+
+		<script type="text/javascript">
+$(document).ready(function () {
+	var $insertAfter = $('#js-playbook-articles li:first');
+	var $links = $('.playbook');
+
+	var ids = new Array();
+	$links.each(function () {
+		ids.push($(this).data('id'));
+
+	})
+
+	$.post("/app/playbook/menu",
+			{ pageIdentifier: 'OrganizerEvaluation2/EventEvaluationPlanEvaluator', ids  },
+			function (data) {
+				$insertAfter.after(data.html);
+
+				$links.each(function () {
+					var $this = $(this);
+					var id = $this.data('id');
+					var href = data.links[id];
+
+					if (href) {
+
+					}
+				})
+			})
+})
+

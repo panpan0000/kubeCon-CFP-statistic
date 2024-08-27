@@ -1,0 +1,44 @@
+{
+  "message": "AllGood",
+  "sessions": [
+    {
+      "maxDateCreatedUtc": null,
+      "ratings": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "postponed": false,
+      "ignored": false,
+      "sessionId": 717457,
+      "title": "Ar Magic"
+    },
+    {
+      "maxDateCreatedUtc": null,
+      "ratings": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "postponed": false,
+      "ignored": false,
+      "sessionId": 718680,
+      "title": "Platform Engineering for My toy"
+    }
+  ],
+  "view": "Todo",
+  "page": 0,
+  "nextPage": true,
+  "previousPage": false,
+  "totalCount": 60,
+  "totalPages": 3,
+  "showingFrom": 0,
+  "showingTo": 20,
+  "pages": [
+    0,
+    1,
+    2
+  ]
+}
