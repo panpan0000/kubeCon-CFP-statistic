@@ -24,6 +24,19 @@
       ],
       "postponed": false,
       "ignored": false,
+      "sessionId": 717457,
+      "title": "Duplicated"
+    },
+    {
+      "maxDateCreatedUtc": null,
+      "ratings": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "postponed": false,
+      "ignored": false,
       "sessionId": 718680,
       "title": "Platform Engineering for My toy"
     }

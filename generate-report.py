@@ -76,7 +76,7 @@ class Session:
                 }
         for i,s in enumerate(self.speakers):
             rep["speaker"+str(i+1)]= s['name']
-            rep["speaker"+str(i+1)+"-company"]=s['company']
+            rep["speaker"+str(i+1)+"-company"]=s.get('company')
         return rep;
 
     def __repr__(self):

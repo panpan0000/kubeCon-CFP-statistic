@@ -1,6 +1,7 @@
 # This is an automatic parser for KubeCon CFP reviewers.
 
----
+Okay, I should have know that sessionize provides API ...
+
 
 ## NOTE: You should make below changes BEFORE running this scripts.
 
