@@ -29,7 +29,7 @@ class Speaker:
         self.name = name
         self.title = title
         self.company = company
-        self.desc = description  # store as desc to match existing code
+        self.description = description
 
     def to_dict(self, index):
         """Convert speaker to a dictionary with indexed keys"""
@@ -37,7 +37,7 @@ class Speaker:
             f'speaker{index}_name': self.name,
             f'speaker{index}_title': self.title,
             f'speaker{index}_company': self.company,
-            f'speaker{index}_bio': self.desc
+            f'speaker{index}_bio': self.description
         }
 
     def __repr__(self):
@@ -81,15 +81,10 @@ class Session:
         # Combine all information
         result = {**session_info, **project_info}
         
-        # Add speaker information dynamically
+        # Add speaker information
         for i, speaker in enumerate(self.speakers, 1):
-            if isinstance(speaker, dict):
-                # Handle dictionary speaker data
-                result[f'speaker{i}_name'] = speaker.get('name', '')
-                result[f'speaker{i}_company'] = speaker.get('company', '')
-            elif isinstance(speaker, Speaker):
-                # Handle Speaker object
-                result.update(speaker.to_dict(i))
+            speaker_dict = speaker.to_dict(i)
+            result.update(speaker_dict)
         
         return result
 
@@ -158,7 +153,9 @@ def parse_session_detail(html_content, session):
                 session.add_res = clean_text(th.find_next_sibling('td').text.strip())
 
     # Process speakers
-    speaker_divs = soup.find_all('div', class_='speaker-item')
+    #speaker_divs = soup.find_all('div', class_='speaker-item')
+    speaker_divs = soup.find_all('div', class_='social-body') # seems the div nclass changed.
+
     for speaker_div in speaker_divs:
         speaker_info = {
             'name': clean_text(speaker_div.find('h4').text.strip()),
@@ -171,6 +168,8 @@ def parse_session_detail(html_content, session):
         for th in speaker_div.find_all('th'):
             if th and th.text.strip() == "Company":
                 speaker_info['company'] = clean_text(th.find_next_sibling('td').text.strip())
+            elif th and th.text.strip() == "Speaker Title":
+                speaker_info['title'] = clean_text(th.find_next_sibling('td').text.strip())
         
         desc_p = speaker_div.find('p', class_='force-wrap')
         if desc_p:
@@ -178,6 +177,7 @@ def parse_session_detail(html_content, session):
         
         session.add_speaker(Speaker(
             name=speaker_info['name'],
+            title=speaker_info['title'],
             company=speaker_info['company'],
             description=speaker_info['description']
         ))
@@ -196,6 +196,7 @@ async def main():
         for i in range(1, 9):
             speaker_fields.extend([
                 f'speaker{i}_name',
+                f'speaker{i}_title',
                 f'speaker{i}_company',
                 f'speaker{i}_bio'
             ])
